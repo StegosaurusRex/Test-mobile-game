@@ -25,5 +25,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Действия при смерти персонажа
         Debug.Log("Player died");
+        Destroy(gameObject);
     }
 }

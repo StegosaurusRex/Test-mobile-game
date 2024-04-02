@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
 {
- void OnTriggerEnter(Collider other)
+    public AudioClip pickupSound; // Reference to the audio clip for pickup sound
+    private AudioSource audioSource; // Reference to the AudioSource component
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component attached to the same GameObject
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Добавление предмета в инвентарь персонажа
+            // Play the pickup sound
+            if (pickupSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(pickupSound);
+            }
+
             Debug.Log("Item picked up");
-            Destroy(gameObject); // Уничтожение предмета после подбора
+            Destroy(gameObject); // Destroy the item after picking it up
         }
     }
 }
