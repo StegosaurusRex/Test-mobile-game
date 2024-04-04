@@ -5,14 +5,15 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    public int maxHealth = 100;
-    public int currentHealth;
-    public GameObject[] itemsToDrop;
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private GameObject[] itemsToDrop;
+
 
     void Start()
     {
         currentHealth = maxHealth;
-        UpdateSlider();
+        
     }
 
     public void TakeDamage(int damage)
@@ -31,10 +32,18 @@ public class EnemyHealth : MonoBehaviour
     {
         if (slider != null)
         {
-            slider.value = (float)currentHealth / maxHealth;
+            // float fillAmount = currentHealth / maxHealth;
+            slider.value = currentHealth/maxHealth;
         }
     }
-
+    // Function to update the enemy's health
+ 
+    void Update(){
+       UpdateSlider();
+        // Position the health bar above the enemy's head
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        slider.transform.position = screenPos + new Vector3(0, 25, 0); // Adjusting the offset
+    }
     void Die()
     {
         // Destroy the enemy GameObject

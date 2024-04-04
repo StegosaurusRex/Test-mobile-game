@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item1
+  - Item2
+  - Item3
+  - Item4
+  - Item5
+  - Item6
+  - Inventory
+  - CreatedItem1
+  - CreatedItem2
+  - CreatedItem3
+  - CreatedItem4
+  - CreatedItem5
+  - CreatedItem6
   layers:
   - Default
   - TransparentFX

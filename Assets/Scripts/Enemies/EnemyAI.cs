@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField]private int maxHealth = 50;
-    [SerializeField]private int currentHealth;
+
     [SerializeField]private Transform playerTransform;
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float attackRange = 3f;
@@ -14,14 +13,14 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private int damage;
-    private float nextAttackTime = 0f;
-    public float attackCooldown = 3f;
+    [SerializeField] private float nextAttackTime = 0f;
+    [SerializeField] private float attackCooldown = 3f;
 
-    public float minDistance = 5f; // Minimum distance for the enemy to start moving towards the player
+    [SerializeField] private float minDistance = 5f; // Minimum distance for the enemy to start moving towards the player
 
     void Start()
     {
-        currentHealth = maxHealth;
+
         playerTransform = GameObject.FindWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
         playerHealth = playerTransform.GetComponent<PlayerHealth>();
@@ -62,20 +61,6 @@ void Update()
             nextAttackTime = Time.time + attackCooldown;
         }
     }
-    // void TakeDamage(int damage)
-    // {
-    //     currentHealth -= damage;
-    //     // Обновление полосы здоровья
-    //     if (currentHealth <= 0)
-    //     {
-    //         Die();
-    //     }
-    }
 
-    void Die()
-    {
-        // Действия при смерти монстра
-        Debug.Log("Monster died");
-        // Спаун предмета после смерти
-    }
+}
 }
