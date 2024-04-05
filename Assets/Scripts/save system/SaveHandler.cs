@@ -32,16 +32,7 @@ public class SaveHandler : MonoBehaviour
             Load();
         }
     }
-    public void NewGame()
-    {
 
-        SceneManager.LoadScene("TestingGamePlayMechanicsScene");
-    }
-    public void ContinueGame()
-    {
-
-
-    }
     private List<ISaveable> FindAllSavebleObjects()
     {
         IEnumerable<ISaveable> saveable = FindObjectsOfType<MonoBehaviour>()
@@ -100,25 +91,8 @@ public class SaveHandler : MonoBehaviour
 [Serializable]
 public class SaveObject
 {
-    public int hp;
-    public Vector3 playerPosition;
-    public Quaternion playerRotation;
-    //public static List<FooClass> barList = new List<FooClass>();
-
-    public int amountOfAssaultRifleClips;
-    public int amountOfKeys;
-    public int amountOfMedpacks;
-    public int amountOfPistolClips;
-    public int amountOfShotgunClips;
-    public bool isRiflePicked = false;
-    public bool isShotGunPicked = false;
-    public bool isPileOfLootPicked_R3;
-    public int selectedWeapon;
-    public bool isBigClownDead;
-    public bool isBigCrawlerDead;
-   
-
-    public bool isGameLoaded;
+    public int enemyCount;
+    public int bulletCount;
 }
 // [Serializable]
 //  public class FooClass

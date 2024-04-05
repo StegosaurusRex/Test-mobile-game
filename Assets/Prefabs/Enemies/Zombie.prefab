@@ -309,6 +309,8 @@ MonoBehaviour:
   - {fileID: 8436861975435399764, guid: 25e574242428ed74097b0950a0c7b91b, type: 3}
   - {fileID: 8049838643711782202, guid: a313977d8884e5141bc6f9bb83dff5bb, type: 3}
   - {fileID: 1717382605958337893, guid: 9a54810454d3afc499b40a89004a82e9, type: 3}
+  enemyCountText: {fileID: 8218402732396002078, guid: dd0a8db167bf5b14fb24eaad063edea8, type: 3}
+  enemyCount: 0
 --- !u!1 &1268423230137430453
 GameObject:
   m_ObjectHideFlags: 0

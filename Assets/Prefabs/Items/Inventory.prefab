@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3587759686693250775}
   - component: {fileID: 7663897137077953605}
   - component: {fileID: 3930223575201412309}
+  - component: {fileID: 1688525759}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Inventory
@@ -54,7 +55,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8128538903132929748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -84,7 +85,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8128538903132929748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
@@ -101,3 +102,21 @@ MonoBehaviour:
   m_Spacing: {x: 90.85, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1688525759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128538903132929748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e60c4957e325ed47b6b82dee16c87c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item1Count: 0
+  item2Count: 0
+  item3Count: 0
+  item4Count: 0
+  item5Count: 0
+  item6Count: 0

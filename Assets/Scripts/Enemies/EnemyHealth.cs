@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth;
     [SerializeField] private GameObject[] itemsToDrop;
-
-
+    [SerializeField]private TextMeshProUGUI enemyCountText;
+    [SerializeField]private ItemCount itemCount;
+    
     void Start()
     {
         currentHealth = maxHealth;
-        
+        enemyCountText = GameObject.FindGameObjectWithTag("Text").GetComponent<TextMeshProUGUI>();
+        itemCount=GameObject.FindGameObjectWithTag("Inventory").GetComponent<ItemCount>();
+        enemyCountText.SetText("Количество убитых врагов  "+ itemCount.enemyCount);
     }
 
     public void TakeDamage(int damage)
@@ -24,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            
             Die();
         }
     }
@@ -46,6 +51,10 @@ public class EnemyHealth : MonoBehaviour
     }
     void Die()
     {
+        
+        
+        
+        enemyCountText.SetText("Количество убитых врагов  "+ itemCount.enemyCount);
         // Destroy the enemy GameObject
         Destroy(gameObject);
 
@@ -55,5 +64,8 @@ public class EnemyHealth : MonoBehaviour
             int randomIndex = Random.Range(0, itemsToDrop.Length);
             Instantiate(itemsToDrop[randomIndex], transform.position, Quaternion.identity);
         }
+        itemCount.enemyCount++;
     }
+
+    
 }

@@ -17,6 +17,14 @@ TagManager:
   - CreatedItem4
   - CreatedItem5
   - CreatedItem6
+  - popUp1
+  - popUp2
+  - popUp3
+  - popUp4
+  - popUp5
+  - popUp6
+  - GameObject
+  - Text
   layers:
   - Default
   - TransparentFX
